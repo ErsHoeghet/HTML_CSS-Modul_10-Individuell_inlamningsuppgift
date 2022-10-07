@@ -1,0 +1,433 @@
+/*  ==================================================================
+                            FONT IMPORT
+    ==================================================================  */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;500;700&family=Roboto:wght@100;300;400;700&display=swap');
+
+
+/*  ==================================================================
+                        GENERAL/GLOBAL SETTINGS
+    ==================================================================  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+
+p {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    max-width: 90%;
+    text-align: center;
+    color: lightgray;
+}
+
+.global-linkstyling {
+    text-decoration: none;
+    padding: 0.4rem;
+}
+
+.global-flex-specifics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktopnav,
+.searchbar,
+.aside,
+.main:not(.indexmain),
+.indexmain__container1,
+.indexmain__container2,
+.footer {
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+/*  ==================================================================
+                            INDEX.HTML - MOBILE
+    ==================================================================  */
+
+.outerwrapper {
+    min-height: 100%;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    background-color: #01131d;
+}
+
+.innerwrapper {
+    min-height: fit-content;
+    width: 100%;
+    background-color: #383838;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    grid-template-areas:
+        "header"
+        "main"
+        "aside"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    max-width: 15rem;
+    filter: drop-shadow(5px 5px 2px black);
+}
+
+.mobilenav {
+    margin: 0 0 0 auto;
+}
+
+.mobilenav__image {
+    max-width: 1.6rem;
+    max-height: 1.6rem;
+    filter: drop-shadow(5px 5px 2px white) invert(100%)
+}
+
+.desktopnav,
+.indexaside {
+    display: none;
+}
+
+.indexmain {
+    grid-area: main;
+    margin-top: 0;
+    gap: 1rem;
+}
+
+.indexmain__container1 {
+    padding: 1rem 0 0.5rem 0;
+    background-color: #384869;
+}
+
+.indexmain__text1 {
+    margin-top: 0.2rem;
+}
+
+.indexmain__container2 {
+    padding: 1rem 0 0.5rem 0;
+    background-color: #63697e;
+}
+
+.indexmain__text2 {
+    margin-top: 0.2rem;
+}
+
+.indexaside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(27, 50, 78);
+    padding: 1rem 0 0.5rem 0;
+}
+
+.indexaside__text {
+    margin-top: 0.2rem;
+}
+
+.footer {
+    grid-area: footer;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    background-color: #a0a1a1;
+    display: flex;
+    align-items: center;
+}
+
+.footer__login {
+    font-size: 0.9rem;
+    color: black;
+    margin: auto auto;
+    box-shadow: 0px 0px 0px 2px;
+}
+
+
+/*  ==================================================================
+                            INDEX.HTML - DESKTOP
+    ==================================================================  */
+
+@media screen and (min-width: 800px) {
+    h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    .innerwrapper {
+        max-width: 60%;
+        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "navigation navigation navigation"
+            "main main aside"
+            "footer footer footer";
+    }
+
+    .header {
+        justify-content: center;
+    }
+
+    .header__logo {
+        min-width: 37rem;
+    }
+
+    .mobilenav {
+        display: none;
+    }
+
+    .desktopnav {
+        grid-area: navigation;
+        background-color: #a0a1a1;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 1rem;
+    }
+
+    .desktopnav__link {
+        font-size: 2rem;
+        color: black;
+    }
+
+    .desktopnav__link:hover {
+        box-shadow: 0px 0px 0px 2px black;
+    }
+
+    .indexaside {
+        padding: 1.5rem;
+    }
+
+    .indexaside__text {
+        margin: 1rem 0 0 0;
+    }
+
+    .indexmain__text1,
+    .indexmain__text2 {
+        margin-top: 1rem;
+    }
+
+    .footer {
+        padding: 1rem 0;
+    }
+
+    .footer__login {
+        font-size: 2rem;
+        box-shadow: none;
+    }
+
+    .footer__login:hover {
+        box-shadow: 0px 0px 0px 2px black;
+    }
+}
+
+
+/*  ==================================================================
+                            BOOKING.HTML - MOBILE
+    ==================================================================  */
+
+.innerwrapper--booking {
+    grid-template-areas:
+        "header"
+        "searchbar"
+        "main"
+        "footer";
+}
+
+.searchbar {
+    grid-area: searchbar;
+    padding: 1rem 0;
+    background-color: #384869;
+}
+
+.searchbar__form {
+    width: 100%;
+    margin-top: 0.3rem;
+    display: flex;
+}
+
+.searchbar__input {
+    padding: 0.15rem;
+    width: 100%;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 2px 5px rgb(46, 46, 46);
+}
+
+.searchbar__button {
+    margin-left: 0.3rem;
+    padding: 0.15rem 0.3rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 2px 5px rgb(46, 46, 46);
+    background-color: white;
+}
+
+.bookingmain {
+    grid-area: main;
+    background-color: #63697e;
+}
+
+.bookingmain__text span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.bookingmain__images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    color: white;
+}
+
+.bookingmain__images img {
+    width: 100%;
+    flex: 1;
+    margin-top: 0.3rem;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.bookingmain__facilitieslist {
+    padding: 0;
+    margin: 1rem 0 1rem 1rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    color: lightgray;
+    list-style: none;
+    align-self: flex-start;
+}
+
+.bookingmain__button {
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 2px 5px rgb(46, 46, 46);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1rem auto 1rem auto;
+}
+
+
+/*  ==================================================================
+                            BOOKING.HTML - DESKTOP
+    ==================================================================  */
+
+@media screen and (min-width: 800px) {
+    .innerwrapper--booking {
+        grid-template-rows: repeat(5, min-content);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "navigation"
+            "searchbar"
+            "main"
+            "footer";
+    }
+
+    .searchbar__input {
+        padding: 0.3rem;
+        font-size: 1rem;
+    }
+
+    .searchbar__button {
+        padding: 0.3rem 0.7rem;
+        font-size: 1rem;
+    }
+
+
+    .bookingmain__images {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.3rem;
+    }
+
+    .bookingmain__images img {
+        margin: 0;
+    }
+
+    figcaption {
+        display: none;
+    }
+}
+
+
+/*  ==================================================================
+                            ABOUT_US.HTML - MOBILE
+    ==================================================================  */
+
+.innerwrapper--aboutus {
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.aboutusmain {
+    grid-area: main;
+    background-color: #384869;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.aboutusmain__text1 {
+    margin-top: 0.2rem;
+}
+
+
+/*  ==================================================================
+                            ABOUT_US.HTML - DESKTOP
+    ==================================================================  */
+
+@media screen and (min-width: 800px) {
+    .innerwrapper--aboutus {
+        grid-template-rows: repeat(4, min-content);
+        grid-template-areas:
+            "header"
+            "navigation"
+            "main"
+            "footer";
+    }
+}
